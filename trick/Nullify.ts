@@ -2,9 +2,9 @@ import { CardSuit as Suit } from '@karuta/sanguosha-core';
 
 import FixedTargetTrickCard from '../../FixedTargetTrickCard';
 
-class Nullification extends FixedTargetTrickCard {
+class Nullify extends FixedTargetTrickCard {
 	constructor(suit: Suit, number: number) {
-		super('nullification', suit, number);
+		super('nullify', suit, number);
 	}
 
 	async isAvailable(): Promise<boolean> {
@@ -12,4 +12,4 @@ class Nullification extends FixedTargetTrickCard {
 	}
 }
 
-export default Nullification;
+export default Nullify;
