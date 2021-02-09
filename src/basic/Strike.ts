@@ -3,23 +3,24 @@ import {
 	CardSuit as Suit,
 } from '@karuta/sanguosha-core';
 
-import BasicCard from '../../../base/BasicCard';
-
-import GameDriver from '../../../driver/GameDriver';
-import ServerPlayer from '../../../driver/ServerPlayer';
-import Damage from '../../../driver/Damage';
-import CardEffect from '../../../driver/CardEffect';
+import {
+	BasicCard,
+	GameDriver,
+	Player,
+	Damage,
+	CardEffect,
+} from '@karuta/sanguosha-pack';
 
 class Strike extends BasicCard {
 	constructor(suit: Suit, number: number) {
 		super('strike', suit, number);
 	}
 
-	async isAvailable(driver: GameDriver, source: ServerPlayer): Promise<boolean> {
+	async isAvailable(driver: GameDriver, source: Player): Promise<boolean> {
 		return driver && source && source.getPhase() === Phase.Play;
 	}
 
-	async filterPlayer(driver: GameDriver, selected: ServerPlayer[], target: ServerPlayer, source: ServerPlayer): Promise<boolean> {
+	async filterPlayer(driver: GameDriver, selected: Player[], target: Player, source: Player): Promise<boolean> {
 		if (selected.length > 0 || !target) {
 			return false;
 		}
@@ -32,7 +33,7 @@ class Strike extends BasicCard {
 		return inRange;
 	}
 
-	async isFeasible(driver: GameDriver, selected: ServerPlayer[]): Promise<boolean> {
+	async isFeasible(driver: GameDriver, selected: Player[]): Promise<boolean> {
 		return driver && selected.length === 1;
 	}
 

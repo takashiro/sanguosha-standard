@@ -3,19 +3,21 @@ import {
 	PlayerPhase as Phase,
 } from '@karuta/sanguosha-core';
 
-import BasicCard from '../../../base/BasicCard';
-import GameDriver from '../../../driver/GameDriver';
-import ServerPlayer from '../../../driver/ServerPlayer';
-import CardEffect from '../../../driver/CardEffect';
-import Recover from '../../../driver/Recover';
-import CardUse from '../../../driver/CardUse';
+import {
+	BasicCard,
+	GameDriver,
+	Player,
+	CardEffect,
+	Recover,
+	CardUse,
+} from '@karuta/sanguosha-pack';
 
 class Peach extends BasicCard {
 	constructor(suit: Suit, number: number) {
 		super('peach', suit, number);
 	}
 
-	async isAvailable(driver: GameDriver, source: ServerPlayer): Promise<boolean> {
+	async isAvailable(driver: GameDriver, source: Player): Promise<boolean> {
 		return driver && source && source.getPhase() === Phase.Play && source.isWounded();
 	}
 
