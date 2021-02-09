@@ -1,6 +1,6 @@
 import { CardSuit as Suit } from '@karuta/sanguosha-core';
+import { Card } from '@karuta/sanguosha-pack';
 
-import Card from '../../driver/Card';
 import * as std from './basic';
 
 function createBasicCards(): Card[] {

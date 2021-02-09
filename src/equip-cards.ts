@@ -1,10 +1,12 @@
 import { CardSuit as Suit } from '@karuta/sanguosha-core';
 
-import Card from '../../driver/Card';
+import {
+	Card,
+	DefensiveHorseCard,
+	OffensiveHorseCard,
+} from '@karuta/sanguosha-pack';
 
 import * as std from './equip';
-import OffensiveHorseCard from '../../base/OffensiveHorseCard';
-import DefensiveHorseCard from '../../base/DefensiveHorseCard';
 
 function createEquipCards(): Card[] {
 	return [

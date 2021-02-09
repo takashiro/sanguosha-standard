@@ -1,7 +1,9 @@
 import { General } from '@karuta/sanguosha-core';
 
-import Collection from '../../driver/Collection';
-import Card from '../../driver/Card';
+import {
+	Collection,
+	Card,
+} from '@karuta/sanguosha-pack';
 
 import wei from './wei';
 import shu from './shu';
