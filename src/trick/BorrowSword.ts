@@ -3,23 +3,25 @@ import {
 	CardSuit as Suit,
 } from '@karuta/sanguosha-core';
 
-import InstantTrickCard from '../../../base/InstantTrickCard';
-import GameDriver from '../../../driver';
-import ServerPlayer from '../../../driver/ServerPlayer';
-import CardUse from '../../../driver/CardUse';
-import CardEffect from '../../../driver/CardEffect';
-import CardAction from '../../../core/CardAction';
-import CardPattern from '../../../core/CardPattern';
-import Card from '../../../driver/Card';
+import {
+	InstantTrickCard,
+	GameDriver,
+	Player,
+	CardUse,
+	CardEffect,
+	CardAction,
+	CardPattern,
+	Card,
+} from '@karuta/sanguosha-pack';
 
 class BorrowSword extends InstantTrickCard {
-	protected victim?: ServerPlayer;
+	protected victim?: Player;
 
 	constructor(suit: Suit, number: number) {
 		super('borrow-sword', suit, number);
 	}
 
-	async isAvailable(driver: GameDriver, source: ServerPlayer): Promise<boolean> {
+	async isAvailable(driver: GameDriver, source: Player): Promise<boolean> {
 		const others = driver.getAlivePlayersExcept(source);
 		const victims = driver.getAlivePlayers();
 		for (const other of others) {
@@ -38,11 +40,11 @@ class BorrowSword extends InstantTrickCard {
 		return false;
 	}
 
-	async isFeasible(driver: GameDriver, selected: ServerPlayer[]): Promise<boolean> {
+	async isFeasible(driver: GameDriver, selected: Player[]): Promise<boolean> {
 		return selected.length === 2;
 	}
 
-	async filterPlayer(driver: GameDriver, selected: ServerPlayer[], toSelect: ServerPlayer, source: ServerPlayer): Promise<boolean> {
+	async filterPlayer(driver: GameDriver, selected: Player[], toSelect: Player, source: Player): Promise<boolean> {
 		if (selected.length <= 0) {
 			if (toSelect === source) {
 				return false;

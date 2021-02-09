@@ -3,10 +3,11 @@ import {
 	CardType,
 } from '@karuta/sanguosha-core';
 
-import GameDriver from '../../../driver';
-import CardEffect from '../../../driver/CardEffect';
-
-import FixedTargetTrickCard from '../../../base/FixedTargetTrickCard';
+import {
+	GameDriver,
+	CardEffect,
+	FixedTargetTrickCard,
+} from '@karuta/sanguosha-pack';
 
 class Nullify extends FixedTargetTrickCard {
 	constructor(suit: Suit, number: number) {

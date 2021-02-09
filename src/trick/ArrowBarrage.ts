@@ -1,14 +1,15 @@
 import { CardSuit as Suit } from '@karuta/sanguosha-core';
 
-import AreaEffectTrickCard from '../../../base/AreaEffectTrickCard';
-import CardAction from '../../../core/CardAction';
-import CardPattern from '../../../core/CardPattern';
-
-import Card from '../../../driver/Card';
-import CardEffect from '../../../driver/CardEffect';
-import CardExpense from '../../../driver/CardExpense';
-import Damage from '../../../driver/Damage';
-import GameDriver from '../../../driver/GameDriver';
+import {
+	AreaEffectTrickCard,
+	CardAction,
+	CardPattern,
+	Card,
+	CardEffect,
+	CardExpense,
+	Damage,
+	GameDriver,
+} from '@karuta/sanguosha-pack';
 
 class ArrowBarrage extends AreaEffectTrickCard {
 	constructor(suit: Suit, number: number) {

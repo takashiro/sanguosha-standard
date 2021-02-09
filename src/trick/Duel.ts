@@ -1,21 +1,23 @@
 import { CardSuit as Suit } from '@karuta/sanguosha-core';
 
-import MonadicTrickCard from '../../../base/MonadicTrickCard';
-import GameDriver from '../../../driver';
-import CardEffect from '../../../driver/CardEffect';
-import ServerPlayer from '../../../driver/ServerPlayer';
-import CardPattern from '../../../core/CardPattern';
-import CardAction from '../../../core/CardAction';
-import Damage from '../../../driver/Damage';
-import CardExpense from '../../../driver/CardExpense';
-import Card from '../../../driver/Card';
+import {
+	MonadicTrickCard,
+	GameDriver,
+	CardEffect,
+	Player,
+	CardPattern,
+	CardAction,
+	Damage,
+	CardExpense,
+	Card,
+} from '@karuta/sanguosha-pack';
 
 class Duel extends MonadicTrickCard {
 	constructor(suit: Suit, number: number) {
 		super('duel', suit, number);
 	}
 
-	async filterPlayer(driver: GameDriver, selected: ServerPlayer[], target: ServerPlayer, source: ServerPlayer): Promise<boolean> {
+	async filterPlayer(driver: GameDriver, selected: Player[], target: Player, source: Player): Promise<boolean> {
 		return super.filterPlayer(driver, selected, target, source) && target !== source;
 	}
 

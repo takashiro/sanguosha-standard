@@ -3,11 +3,13 @@ import {
 	PlayerPhase as Phase,
 } from '@karuta/sanguosha-core';
 
-import DelayedTrickCard from '../../../base/DelayedTrickCard';
-import GameDriver from '../../../driver/GameDriver';
-import CardEffect from '../../../driver/CardEffect';
-import Judgement from '../../../driver/Judgement';
-import CardPattern from '../../../core/CardPattern';
+import {
+	DelayedTrickCard,
+	GameDriver,
+	CardEffect,
+	Judgement,
+	CardPattern,
+} from '@karuta/sanguosha-pack';
 
 const effectivePattern = new CardPattern({
 	suits: [

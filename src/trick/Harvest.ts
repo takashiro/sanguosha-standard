@@ -1,12 +1,12 @@
 import { CardSuit as Suit } from '@karuta/sanguosha-core';
 
-import CardAction from '../../../core/CardAction';
-
-import GameDriver from '../../../driver';
-import CardEffect from '../../../driver/CardEffect';
-import CardUse from '../../../driver/CardUse';
-
-import GlobalEffectTrickCard from '../../../base/GlobalEffectTrickCard';
+import {
+	CardAction,
+	GameDriver,
+	CardEffect,
+	CardUse,
+	GlobalEffectTrickCard,
+} from '@karuta/sanguosha-pack';
 
 class Harvest extends GlobalEffectTrickCard {
 	constructor(suit: Suit, number: number) {

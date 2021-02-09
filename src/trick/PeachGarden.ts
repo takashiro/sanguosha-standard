@@ -1,9 +1,11 @@
 import { CardSuit as Suit } from '@karuta/sanguosha-core';
 
-import GlobalEffectTrickCard from '../../../base/GlobalEffectTrickCard';
-import GameDriver from '../../../driver';
-import CardEffect from '../../../driver/CardEffect';
-import Recover from '../../../driver/Recover';
+import {
+	GlobalEffectTrickCard,
+	GameDriver,
+	CardEffect,
+	Recover,
+} from '@karuta/sanguosha-pack';
 
 class PeachGarden extends GlobalEffectTrickCard {
 	constructor(suit: Suit, number: number) {

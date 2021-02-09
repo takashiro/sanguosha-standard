@@ -1,17 +1,19 @@
 import { CardSuit as Suit } from '@karuta/sanguosha-core';
 
-import MonadicTrickCard from '../../../base/MonadicTrickCard';
-import CardAction from '../../../core/CardAction';
-import GameDriver from '../../../driver';
-import CardEffect from '../../../driver/CardEffect';
-import ServerPlayer from '../../../driver/ServerPlayer';
+import {
+	MonadicTrickCard,
+	CardAction,
+	GameDriver,
+	CardEffect,
+	Player,
+} from '@karuta/sanguosha-pack';
 
 class Dismantle extends MonadicTrickCard {
 	constructor(suit: Suit, number: number) {
 		super('dismantle', suit, number);
 	}
 
-	async isAvailable(driver: GameDriver, source: ServerPlayer): Promise<boolean> {
+	async isAvailable(driver: GameDriver, source: Player): Promise<boolean> {
 		if (!await super.isAvailable(driver, source)) {
 			return false;
 		}
@@ -26,7 +28,7 @@ class Dismantle extends MonadicTrickCard {
 		return false;
 	}
 
-	async filterPlayer(driver: GameDriver, selected: ServerPlayer[], target: ServerPlayer, source: ServerPlayer): Promise<boolean> {
+	async filterPlayer(driver: GameDriver, selected: Player[], target: Player, source: Player): Promise<boolean> {
 		if (!super.filterPlayer(driver, selected, target, source)) {
 			return false;
 		}
