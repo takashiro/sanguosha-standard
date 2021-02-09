@@ -1,6 +1,6 @@
 import { SkillOwner } from '@karuta/sanguosha-core';
+import { Skill } from '@karuta/sanguosha-pack';
 
-import Skill from '../../../../base/Skill';
 import LuoShenJudge from './LuoShenJudge';
 import LuoShenMove from './LuoShenMove';
 

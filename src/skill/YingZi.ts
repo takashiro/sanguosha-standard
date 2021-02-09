@@ -3,13 +3,15 @@ import {
 	PlayerPhase as Phase,
 } from '@karuta/sanguosha-core';
 
-import CardDraw from '../../../driver/CardDraw';
-import GameEvent from '../../../driver/GameEvent';
-import MonadicSkill from '../../../base/MonadicSkill';
+import {
+	CardDraw,
+	EventType,
+	MonadicSkill,
+} from '@karuta/sanguosha-pack';
 
 export default class YingZi extends MonadicSkill<CardDraw> {
 	constructor(owner: SkillOwner) {
-		super(owner, 'yingzi', GameEvent.DrawingNCards);
+		super(owner, 'yingzi', EventType.DrawingNCards);
 	}
 
 	isTriggerable(draw: CardDraw): boolean {

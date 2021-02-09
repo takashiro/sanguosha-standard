@@ -1,12 +1,14 @@
 import { SkillOwner } from '@karuta/sanguosha-core';
 
-import GameEvent from '../../../driver/GameEvent';
-import Judgement from '../../../driver/Judgement';
-import MonadicSkill from '../../../base/MonadicSkill';
+import {
+	EventType,
+	Judgement,
+	MonadicSkill,
+} from '@karuta/sanguosha-pack';
 
 export default class TianDu extends MonadicSkill<Judgement> {
 	constructor(owner: SkillOwner) {
-		super(owner, 'tiandu', GameEvent.AfterIssuingJudgement);
+		super(owner, 'tiandu', EventType.AfterIssuingJudgement);
 	}
 
 	isTriggerable(judgement: Judgement): boolean {

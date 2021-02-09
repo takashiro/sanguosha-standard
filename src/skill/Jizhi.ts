@@ -4,13 +4,15 @@ import {
 	CardSubtype,
 } from '@karuta/sanguosha-core';
 
-import MonadicSkill from '../../../base/MonadicSkill';
-import CardUse from '../../../driver/CardUse';
-import GameEvent from '../../../driver/GameEvent';
+import {
+	MonadicSkill,
+	CardUse,
+	EventType,
+} from '@karuta/sanguosha-pack';
 
 export default class JiZhi extends MonadicSkill<CardUse> {
 	constructor(owner: SkillOwner) {
-		super(owner, 'jizhi', GameEvent.UsingCard);
+		super(owner, 'jizhi', EventType.UsingCard);
 	}
 
 	isTriggerable(use: CardUse): boolean {

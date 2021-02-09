@@ -1,14 +1,17 @@
 import { PlayerPhase as Phase } from '@karuta/sanguosha-core';
 
-import SkillEffect from '../../../../base/SkillEffect';
-import Damage from '../../../../driver/Damage';
-import GameEvent from '../../../../driver/GameEvent';
-import ServerPlayer from '../../../../driver/ServerPlayer';
+import {
+	SkillEffect,
+	Damage,
+	EventType,
+	Player,
+} from '@karuta/sanguosha-pack';
+
 import LuoYi from '.';
 
 export default class LuoYiDamage extends SkillEffect<Damage> {
 	constructor(skill: LuoYi) {
-		super(skill, GameEvent.Damaging);
+		super(skill, EventType.Damaging);
 		this.compulsory = true;
 	}
 
@@ -36,8 +39,8 @@ export default class LuoYiDamage extends SkillEffect<Damage> {
 		return true;
 	}
 
-	getInvoker(damage: Damage): ServerPlayer {
-		return damage.from as ServerPlayer;
+	getInvoker(damage: Damage): Player {
+		return damage.from as Player;
 	}
 
 	async process(damage: Damage): Promise<boolean> {

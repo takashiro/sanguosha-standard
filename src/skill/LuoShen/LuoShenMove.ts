@@ -1,16 +1,18 @@
-import Skill from '../../../../base/Skill';
-import SkillEffect from '../../../../base/SkillEffect';
-import GameEvent from '../../../../driver/GameEvent';
-import Judgement from '../../../../driver/Judgement';
-import ServerPlayer from '../../../../driver/ServerPlayer';
+import {
+	Skill,
+	SkillEffect,
+	EventType,
+	Judgement,
+	Player,
+} from '@karuta/sanguosha-pack';
 
 export default class LuoShenMove extends SkillEffect<Judgement> {
 	constructor(skill: Skill) {
-		super(skill, GameEvent.AfterIssuingJudgement);
+		super(skill, EventType.AfterIssuingJudgement);
 		this.compulsory = true;
 	}
 
-	getInvoker(judgement: Judgement): ServerPlayer {
+	getInvoker(judgement: Judgement): Player {
 		return judgement.player;
 	}
 

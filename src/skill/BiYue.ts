@@ -3,13 +3,15 @@ import {
 	PlayerPhase as Phase,
 } from '@karuta/sanguosha-core';
 
-import MonadicSkill from '../../../base/MonadicSkill';
-import GameEvent from '../../../driver/GameEvent';
-import PhaseChange from '../../../driver/PhaseChange';
+import {
+	MonadicSkill,
+	EventType,
+	PhaseChange,
+} from '@karuta/sanguosha-pack';
 
 export default class BiYue extends MonadicSkill<PhaseChange> {
 	constructor(owner: SkillOwner) {
-		super(owner, 'biyue', GameEvent.ProceedingPhase);
+		super(owner, 'biyue', EventType.ProceedingPhase);
 	}
 
 	isTriggerable(change: PhaseChange): boolean {

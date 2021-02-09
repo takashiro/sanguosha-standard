@@ -3,16 +3,18 @@ import {
 	CardSuit as Suit,
 } from '@karuta/sanguosha-core';
 
-import CardPattern from '../../../core/CardPattern';
-import CardAction from '../../../core/CardAction';
-import Damage from '../../../driver/Damage';
-import GameEvent from '../../../driver/GameEvent';
-import Judgement from '../../../driver/Judgement';
-import MonadicSkill from '../../../base/MonadicSkill';
+import {
+	CardPattern,
+	CardAction,
+	Damage,
+	EventType,
+	Judgement,
+	MonadicSkill,
+} from '@karuta/sanguosha-pack';
 
 export default class GangLie extends MonadicSkill<Damage> {
 	constructor(owner: SkillOwner) {
-		super(owner, 'ganglie', GameEvent.AfterDamaged);
+		super(owner, 'ganglie', EventType.AfterDamaged);
 	}
 
 	isTriggerable(damage: Damage): boolean {

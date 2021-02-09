@@ -3,14 +3,16 @@ import {
 	CardAreaType,
 } from '@karuta/sanguosha-core';
 
-import Card from '../../../driver/Card';
-import Damage from '../../../driver/Damage';
-import GameEvent from '../../../driver/GameEvent';
-import MonadicSkill from '../../../base/MonadicSkill';
+import {
+	Card,
+	Damage,
+	EventType,
+	MonadicSkill,
+} from '@karuta/sanguosha-pack';
 
 export default class JianXiong extends MonadicSkill<Damage> {
 	constructor(owner: SkillOwner) {
-		super(owner, 'jianxiong', GameEvent.AfterDamaged);
+		super(owner, 'jianxiong', EventType.AfterDamaged);
 	}
 
 	isTriggerable(damage: Damage): boolean {

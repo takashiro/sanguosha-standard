@@ -5,16 +5,18 @@ import {
 	CardColor as Color,
 } from '@karuta/sanguosha-core';
 
-import PhaseChange from '../../../../driver/PhaseChange';
-import GameEvent from '../../../../driver/GameEvent';
-import Judgement from '../../../../driver/Judgement';
-import CardPattern from '../../../../core/CardPattern';
-import SkillEffect from '../../../../base/SkillEffect';
-import ServerPlayer from '../../../../driver/ServerPlayer';
+import {
+	PhaseChange,
+	EventType,
+	Judgement,
+	CardPattern,
+	SkillEffect,
+	Player as ServerPlayer,
+} from '@karuta/sanguosha-pack';
 
 export default class LuoShenJudge extends SkillEffect<PhaseChange> {
 	constructor(skill: Skill) {
-		super(skill, GameEvent.StartingPhase);
+		super(skill, EventType.StartingPhase);
 	}
 
 	getInvoker(change: PhaseChange): ServerPlayer {

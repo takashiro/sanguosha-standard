@@ -1,13 +1,15 @@
 import { SkillOwner } from '@karuta/sanguosha-core';
 
-import CardAction from '../../../core/CardAction';
-import Damage from '../../../driver/Damage';
-import GameEvent from '../../../driver/GameEvent';
-import MonadicSkill from '../../../base/MonadicSkill';
+import {
+	CardAction,
+	Damage,
+	EventType,
+	MonadicSkill,
+} from '@karuta/sanguosha-pack';
 
 export default class FanKui extends MonadicSkill<Damage> {
 	constructor(owner: SkillOwner) {
-		super(owner, 'fankui', GameEvent.AfterDamaged);
+		super(owner, 'fankui', EventType.AfterDamaged);
 	}
 
 	isTriggerable(damage: Damage): boolean {

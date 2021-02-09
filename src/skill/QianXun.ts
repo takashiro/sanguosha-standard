@@ -3,13 +3,15 @@ import {
 	SkillOwner,
 } from '@karuta/sanguosha-core';
 
-import CardUse from '../../../driver/CardUse';
-import GameEvent from '../../../driver/GameEvent';
-import MonadicSkill from '../../../base/MonadicSkill';
+import {
+	CardUse,
+	EventType,
+	MonadicSkill,
+} from '@karuta/sanguosha-pack';
 
 export default class QianXun extends MonadicSkill<CardUse> {
 	constructor(owner: SkillOwner) {
-		super(owner, 'qianxun', GameEvent.BeingCardTargets, [Tag.Compulsory]);
+		super(owner, 'qianxun', EventType.BeingCardTargets, [Tag.Compulsory]);
 	}
 
 	isTriggerable(use: CardUse): boolean {

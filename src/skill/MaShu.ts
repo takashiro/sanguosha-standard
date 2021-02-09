@@ -3,13 +3,15 @@ import {
 	SkillOwner as Owner,
 } from '@karuta/sanguosha-core';
 
-import MonadicSkill from '../../../base/MonadicSkill';
-import DistanceVector from '../../../driver/DistanceVector';
-import GameEvent from '../../../driver/GameEvent';
+import {
+	MonadicSkill,
+	DistanceVector,
+	EventType,
+} from '@karuta/sanguosha-pack';
 
 export default class MaShu extends MonadicSkill<DistanceVector> {
 	constructor(owner: Owner) {
-		super(owner, 'mashu', GameEvent.CalculatingDistance, [Tag.Compulsory]);
+		super(owner, 'mashu', EventType.CalculatingDistance, [Tag.Compulsory]);
 	}
 
 	isTriggerable(vector: DistanceVector): boolean {
