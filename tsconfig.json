@@ -4,6 +4,7 @@
 		"outDir": "dist",
 		"target": "ES2019",
 		"moduleResolution": "node",
+		"declaration": true,
 		"esModuleInterop": true,
 		"strict": true
 	},

@@ -41,5 +41,8 @@
   "bugs": {
     "url": "https://github.com/takashiro/sanguosha-standard/issues"
   },
-  "homepage": "https://github.com/takashiro/sanguosha-standard#readme"
+  "homepage": "https://github.com/takashiro/sanguosha-standard#readme",
+  "files": [
+    "dist"
+  ]
 }
